@@ -37,6 +37,19 @@ function buttonClickedImg(){
   textarea.value = newText;
 }
 
+function buttonClickedLink(){
+  textarea = document.getElementById("textArea1");
+  var targ = event.target || event.srcElement;
+
+  brickBegin = "<a href= \"";
+  brickEnd =  "\"> </a>";
+
+  var newText = textarea.value.substring (0, textarea.selectionStart) + 
+      brickBegin + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + brickEnd
+      textarea.value.substring (textarea.selectionEnd);
+  textarea.value = newText;
+}
+
 function buttonClickedSingle(){
   textarea = document.getElementById("textArea1");
   var targ = event.target || event.srcElement;
