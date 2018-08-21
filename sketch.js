@@ -1,9 +1,9 @@
 function buttonClicked(){
-    textarea = document.getElementById("textArea1");
+    var textarea = document.getElementById("textArea1");
     var targ = event.target || event.srcElement;
 
-    brickBegin = "<" + targ.textContent + ">";
-    brickEnd = "</" + targ.textContent + ">";
+    var brickBegin = "<" + targ.textContent + ">";
+    var brickEnd = "</" + targ.textContent + ">";
 
     var newText = textarea.value.substring (0, textarea.selectionStart) + 
         brickBegin + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + brickEnd +
@@ -77,4 +77,23 @@ window.addEventListener('copy', copy);
 document.execCommand('copy');
 window.removeEventListener('copy', copy);
   alert("Content copied to clipboard!");
+}
+
+function preview(){
+   textarea1 = document.getElementById("textArea1").value;
+   // viewHtml = document.getElementByI("textArea2");
+    //document.
+   // viewHtml.open();
+  // viewHtml.write(textarea1);
+    //viewHtml.close();
+    //viewHtml.innerHTML = textarea1.value;
+    //var ifrm = document.getElementById("textArea2");
+    //ifrm.innerHTML = textarea1;
+
+    var iframe = document.getElementById("textArea2");
+iframe = iframe.contentWindow || ( iframe.contentDocument.document || iframe.contentDocument);
+
+iframe.document.open();
+iframe.document.write(textarea1);
+iframe.document.close();
 }
