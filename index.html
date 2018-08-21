@@ -9,7 +9,6 @@
   <body style="background-color : #f3f3f3">
       
     <div>
-      <h2>BrickDown ver. 0.1 (alpha)</h2>
       <br>
       <center> 
       <frame>
@@ -51,14 +50,28 @@
     <br>
 
       <div>
-      <frame>
-        <center><textarea  id = "textArea1" class="upload-enabled" rows="20" style="width:99%; resize : vertical;"></textarea></center>
+      <frame class = "editHolder">
+        <table style="height:99%; width:100%;">
+          <tr>
+            <th>
+        <div>
+        <textarea id = "textArea1" class="upload-enabled" wrap = "hard" rows="20" cols = "35" style="width:99%; resize : vertical"  onkeyup="preview()"></textarea>
         <input type="file" accept="image/*" style="display: none;">
+        </div>
+        </th>
+
+        <th>
+        <frame>         
+        <iframe  id = "textArea2"  wrap = "hard" disabled = "disabled" rows="20" style="width:99%; height:99%; resize : none;"></iframe>
+        </frame>
+      </th>
+      </tr>
+        </table>
       </frame> 
 
       <p><button onclick = "copyToClipboard()">copy to clipboard</button></p>
       <br>
-      <footer><center>August 2018 - created by <a href = "https://steemit.com/@callmejoe">@callmejoe</a></center></footer>
+      <footer><center>August 2018 - BrickDown ver. 0.1 (alpha) - created by <a href = "https://steemit.com/@callmejoe">@callmejoe</a></center></footer>
       </div>
   </body>
 </html>
