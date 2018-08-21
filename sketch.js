@@ -34,7 +34,7 @@ function buttonClickedImg(){
   var brickEnd =  "\" />";
 
   var newText = textarea.value.substring (0, textarea.selectionStart) + 
-      brickBegin + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + brickEnd
+      brickBegin + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + brickEnd +
       textarea.value.substring (textarea.selectionEnd);
   textarea.value = newText;
   preview();
@@ -48,7 +48,7 @@ function buttonClickedLink(){
   var brickEnd =  "\"> </a>";
 
   var newText = textarea.value.substring (0, textarea.selectionStart) + 
-      brickBegin + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + brickEnd
+      brickBegin + textarea.value.substring  (textarea.selectionStart, textarea.selectionEnd) + brickEnd +
       textarea.value.substring (textarea.selectionEnd);
   textarea.value = newText;
   preview();
