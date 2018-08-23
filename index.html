@@ -2,83 +2,64 @@
 <html>
   <head>
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+
     <style> body {padding: 0; margin: 5;} </style>
     <script src="sketch.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="Stylesheet" href="style.css" />
+
   </head>
-  <body>
+  <body onload = "editableIFrame()">
       
     <div id = "buttonlist">
       <br>
       <div class ="text-justify">
       <frame>
-        <button onclick = "buttonClicked()">p</button><button onclick = "buttonClickedSingle()">br</button></button><button onclick = "buttonClickedSingle()">hr</button>  
+        <button onclick = "buttonP()">p</button><button onclick = "buttonHr()">hr</button>  
+      </frame>
+      &emsp;&emsp;
+      <frame>
+          <button onclick = "buttonH1()">h1</button><button onclick = "buttonH2()">h2</button><button onclick = "buttonH3()">h3</button>
       </frame>
       &emsp;&emsp;
       <frame>   
-        <button onclick = "buttonClicked()">strong</button><button onclick = "buttonClicked()">em</button><button onclick = "buttonClicked()">del</button><button onclick = "buttonClicked()">code</button><button onclick = "buttonClicked()">blockquote</button><button onclick = "buttonClicked()">sub</button><button onclick = "buttonClicked()">sup</button>
+        <input type="image" src="img/bold.webp" onclick = "buttonBold()"/><input type="image" src="img/italic.webp" onclick = "buttonItalic()"/><input type="image" src="img/strike.webp" onclick = "buttonStrike()"/>
       </frame>
       &emsp;&emsp;
       <frame>
-      <button onclick = "buttonClicked()">center</button><button onclick = "buttonClickedDiv()">text-justify</button><button onclick = "buttonClickedDiv()">pull-left</button><button onclick = "buttonClickedDiv()">pull-right</button>
-      </frame>
-      &emsp;&emsp;
-      <br>
-      <p>
-      <frame>
-          <button onclick = "buttonClicked()">ul</button><button onclick = "buttonClicked()">ol</button><button onclick = "buttonClicked()">li</button>
+          <input type = "image" src = "img/numberlist.webp" onclick = "buttonUl()"/><input type = "image" src = "img/ol.png" button onclick = "buttonOl()"/>
       </frame>
       &emsp;&emsp;
       <frame>
-          <button onclick = "buttonClicked()">h1</button><button onclick = "buttonClicked()">h2</button><button onclick = "buttonClicked()">h3</button>
+      <input type="image" src="img/code.png" onclick = "buttonCode()"/><input type = "image" src = "img/quote.png" button onclick = "buttonBlockQuote()"/><input type = "image" src = "img/sub.png" onclick = "buttonSub()"/><input type = "image" src = "img/sup.png" onclick = "buttonSup()"/>
       </frame>
       &emsp;&emsp;
       <frame>
-          <button onclick = "buttonClicked()">table</button><button onclick = "buttonClicked()">tr</button><button onclick = "buttonClicked()">td</button><button onclick = "buttonClicked()">th</button>
+      <input type = "image" src = "img/justify.png" onclick = "buttonJustify()"/><input type = "image" src = "img/center.png" value = "OFF" onclick = "buttonCenter()"/><input type = "image" src = "img/left.png" onclick = "buttonLeft()"/><input type = "image" src = "img/right.png" onclick = "buttonRight()"/>
       </frame>
       &emsp;&emsp;
       <frame>
-          <button onclick = "buttonClickedLink()">link</button>
+          <input type="image" src="img/table.webp" onclick = "buttonTable()"/>
+     
+          <input type="image" src="img/link.webp" onclick = "buttonLink()"/>
+    
+          <input type="image" src = "img/img.png" onclick = "buttonImage()"/>
       </frame>
-      &emsp;&emsp;
-     <frame>
-          <button onclick = "buttonClickedImg()">img</button>
-      </frame>
-      &emsp;&emsp;
-      <frame>
-          <button onclick = "buttonClicked()">html</button> 
-      </frame>
-      <p>
       </div>
     </div>
     <br>
 
       <div>
       <div class = "editHolder">
-        <table style="height:100%; width:100%;">
-          <tr>
-            <th>
-        <div>
-        <textarea id = "textArea1" class="upload-enabled" wrap = "hard" rows="18" cols = "35" style="width:99%; resize : vertical"  onkeyup="preview()"></textarea>
-        <input type="file" accept="image/*" style="display: none;">
-        </div>
-        </th>
-
-        <th>
-        <frame>         
-        <iframe id = "textArea2"  wrap = "hard" disabled = "disabled" rows="18" style="width:99%; height:99%; resize : none; background-color : whitesmoke;"></iframe>
-        </frame>
-      </th>
-      </tr>
-        </table>
+        <iframe src ="about:blank" name = "iframe" id = "textArea2" style="width:99%; height:350px; resize : vertical;"></iframe>
       </div> 
 
       <div>
-      <p><button onclick = "copyToClipboard()">copy to clipboard</button></p>
+      <p><button onclick = "copyToClipboard()">copy raw-html to clipboard</button></p>
       </div>
       
       <hr>
-      <footer><center>August 2018 - BrickDown ver. 0.2 (alpha) - created by <a href = "https://steemit.com/@callmejoe">@callmejoe</a></center></footer>
+      <footer><center>August 2018 - BrickDown ver. 0.2.2.1 (alpha) - created by <a href = "https://steemit.com/@callmejoe">@callmejoe</a></center></footer>
       </div>
+      
   </body>
 </html>

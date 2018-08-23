@@ -1,17 +1,10 @@
 
 
-textarea {
+iframe {
     line-height: 1.5;
     border-radius: 5px;
     border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #999;
-}
-
-#textArea2 {
-    line-height: 1.5;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #999;
+	box-shadow: 1px 1px 1px #999;
 }
 
 .editHolder {
@@ -69,4 +62,53 @@ button:active {
 
 body{
     background: #f3f3f3;
+}
+
+#textArea2:hover {
+    border: 1px solid #ddd;
+    opacity: 1;
+}
+
+#textArea2.focus {
+    box-shadow: 0 0 10px rgba(26, 154, 245, .5);
+    border: 1px solid #1a9af5;  
+    outline: 0px solid transparent;
+}
+html, body {
+    font: 14px arial, sans-serif;
+    padding: 2px;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.pull-left {
+	text-align: left;
+}
+
+.pull-right {
+	text-align: right;
+}
+
+input {
+	margin: 2px;
+	padding: 0px;
+	width: 35px;
+	height: 35px;
+}
+
+input:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
+}
+input:active {
+	position:relative;
+	top:1px;
 }
