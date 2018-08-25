@@ -10,6 +10,10 @@ function buttonItalic(){
     iframe.contentDocument.execCommand("italic", false, null);
  }
 
+ function buttonUnderline(){
+    iframe.contentDocument.execCommand("underline", false, null);
+ }
+
  function buttonStrike(){
     iframe.contentDocument.execCommand("strikeThrough", false, null);
  }
@@ -23,7 +27,8 @@ function buttonCenter(){
    // if(document.getElementById("center").value=="OFF"){
        // if(iframe.contentDocument.getSelection() != ""){
         if(iframe.contentDocument.getSelection() != ""){
-            iframe.contentDocument.execCommand("insertHTML", false,  "<center>" + iframe.contentDocument.getSelection() + "</center>"); 
+            iframe.contentDocument.execCommand("insertHTML", false,  "<center>" + iframe.contentDocument.getSelection() + "</center>");
+            ifrmae.contentDocument.execCommand("formatBlock", false, "p");
         }
 //iframe.contentDocument.execCommand("justifyCenter", false, "center"); 
 //iframe.contentDocument.execCommand("formatBlock", false, "p");
@@ -58,6 +63,7 @@ function buttonCenter(){
  }
 
  function buttonH1(){
+        //iframe.contentDocument.execCommand("formatBlock", false, "h1");
         iframe.contentDocument.execCommand("formatBlock", false, "h1");
  }
 

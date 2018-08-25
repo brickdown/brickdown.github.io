@@ -112,3 +112,16 @@ input:active {
 	position:relative;
 	top:1px;
 }
+
+hr {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+}
+
+code {
+	background-color: #ccc;
+}
+
+blockquote{
+	font-family: cursive;
+}
