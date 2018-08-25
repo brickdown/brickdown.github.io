@@ -1,3 +1,7 @@
+function buttonNormal(){
+    iframe.contentDocument.execCommand("removeFormat", false, null);
+}
+
 function buttonBold(){
    iframe.contentDocument.execCommand("bold", false, null);
 }
@@ -11,17 +15,18 @@ function buttonItalic(){
  }
 
 function buttonJustify(){
-    if(iframe.contentDocument.getSelection() != ""){
+    iframe.contentDocument.execCommand("removeFormat", false, null); 
     iframe.contentDocument.execCommand("insertHTML", false, "<div class = text-justify>" + iframe.contentDocument.getSelection() + "</div>");
-    }
  }
 
 function buttonCenter(){
    // if(document.getElementById("center").value=="OFF"){
        // if(iframe.contentDocument.getSelection() != ""){
-            iframe.contentDocument.execCommand("removeFormat", false, null); 
+        if(iframe.contentDocument.getSelection() != ""){
             iframe.contentDocument.execCommand("insertHTML", false,  "<center>" + iframe.contentDocument.getSelection() + "</center>"); 
-            //iframe.contentDocument.execCommand("formatBlock", false, "p");
+        }
+//iframe.contentDocument.execCommand("justifyCenter", false, "center"); 
+//iframe.contentDocument.execCommand("formatBlock", false, "p");
          //   }
       //  document.getElementById("center").value="ON";
    // }
@@ -40,8 +45,7 @@ function buttonCenter(){
 
  function buttonRight(){
     if(iframe.contentDocument.getSelection() != ""){
-    iframe.contentDocument.execCommand("insertHTML", false, "<div class = pull-right>" + iframe.contentDocument.getSelection() + "</div>");
-
+        iframe.contentDocument.execCommand("insertHTML", false, "<div class = pull-right>" + iframe.contentDocument.getSelection() + "</div>");
     }
  }
 
@@ -54,7 +58,7 @@ function buttonCenter(){
  }
 
  function buttonH1(){
-    iframe.contentDocument.execCommand("formatBlock", false, "h1");
+        iframe.contentDocument.execCommand("formatBlock", false, "h1");
  }
 
  function buttonH2(){
@@ -112,7 +116,20 @@ function buttonCenter(){
  function buttonTable(){
     var rows =prompt("ROWS","1");
     var columns =prompt("COLUMNS","1");
-    iframe.contentDocument.execCommand("insertHTML", false, "<table border=\"1\">" + "<tr><td> </td> <td></td></tr>");
+    var r = "";
+    var c = "";
+    var result = "";
+    for(i = 1; i <= rows; i++){
+        for(j = 1; j <= columns; j++){
+            c += "<td>&nbsp;&nbsp;&nbsp;</td>";
+        }
+        r += "<tr>" + c + "</tr>";
+        c = "";
+        result += r;
+        r = "";
+        j = 1;
+    }
+    iframe.contentDocument.execCommand("insertHTML", false, "<table border=\"1\">" + result + "</table>");
  }
 
 
